@@ -1,14 +1,15 @@
 {
   "name": "my-mcp-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "type": "module",
+  "bin": {
+    "my-mcp-server": "./build/index.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "scripts": {
+    "build": "tsc && chmod 755 build/index.js",
+    "dev": "tsc && node build/index.js",
+    "start": "node build/index.js"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.17.1",
     "axios": "^1.11.0",
